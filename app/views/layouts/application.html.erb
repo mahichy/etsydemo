@@ -12,11 +12,12 @@
 
   <body>
     <%= render 'shared/navbar'%>
-    <%= link_to "About", pages_about_path%>
-    <%= link_to "Contact", pages_contact_path%> 
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     <div class="container">
     <%= yield %>
-    <p>Copyright 2023</p>
+    <%= render 'shared/footer'%>
     </div>
 
   </body>
