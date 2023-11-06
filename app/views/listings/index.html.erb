@@ -1,14 +1,42 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="row">
 
-<h1>Listings</h1>
+    <div class="col">
 
-<div id="listings">
-  <% @listings.each do |listing| %>
-    <%= render listing %>
-    <p>
-      <%= link_to "Show this listing", listing %>
-    </p>
-  <% end %>
+
+      <table class="table table-hover"">
+        <thead class= "table-primary">
+          <tr>
+            <th>Name</th>
+            <th>Desctiption</th>
+            <th>price</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @listings.each do |listing|%>
+            <tr>
+              <td><%= listing.name.capitalize%></td>
+              <td><%= listing.description%></td>
+              <td><%= listing.price%></td>
+              <td><%= link_to "Show" ,listing, class: "btn btn-link"%></td>
+              <td><%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%></td>
+              <td><%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%></td>
+            </tr>
+
+          <% end %>
+
+        </tbody>
+
+      </table>
+
+
+    </div>
+  </div>
 </div>
+
 
 <%= link_to "New listing", new_listing_path %>

@@ -3,8 +3,8 @@
 <%= render @listing %>
 
 <div>
-  <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
-  <%= link_to "Back to listings", listings_path %>
+  <%= link_to "Edit ", edit_listing_path(@listing) %> |
+  <%= link_to "Back ", listings_path %>
 
-  <%= button_to "Destroy this listing", @listing, method: :delete %>
+  <%= button_to "Destroy ", @listing, method: :delete %>
 </div>

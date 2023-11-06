@@ -14,8 +14,10 @@
     <%= render 'shared/navbar'%>
     <%= link_to "About", pages_about_path%>
     <%= link_to "Contact", pages_contact_path%> 
+    <div class="container">
     <%= yield %>
     <p>Copyright 2023</p>
+    </div>
 
   </body>
 </html>
