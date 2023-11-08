@@ -4,7 +4,6 @@
 
 <div>
   <%= link_to "Edit ", edit_listing_path(@listing), class: "btn btn-link" %> |
-  <%= link_to "Back ", listings_path %>
-
-  <%= button_to "Destroy ", @listing, method: :delete %>
+  <%= link_to "Back ", listings_path, class: "btn btn-link" %>
+  <%= button_to "Destroy ", @listing, method: :delete, class: "btn btn-link" %>
 </div>
