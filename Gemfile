@@ -23,7 +23,8 @@ gem "bootstrap"
 gem "sassc-rails"
 gem "devise"
 
-gem "paperclip", "~> 6.0.0"
+# gem "paperclip", "~> 6.0.0"
+gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem "bootsnap", require: false
