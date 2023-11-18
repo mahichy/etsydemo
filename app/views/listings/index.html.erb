@@ -1,42 +1,30 @@
-<div class="container">
-  <div class="row">
-
-    <div class="col">
 
 
-      <table class="table table-hover"">
-        <thead class= "table-primary">
-          <tr>
-            <th>Name</th>
-            <th>Desctiption</th>
-            <th>price</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @listings.each do |listing|%>
-            <tr>
-              <td><%= listing.name.capitalize%></td>
-              <td><%= listing.description%></td>
-              <td><%= listing.price%></td>
-              <td><%= link_to "Show" ,listing, class: "btn btn-link"%></td>
-              <td><%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%></td>
-              <td><%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%></td>
-            </tr>
-
-          <% end %>
-
-        </tbody>
-
-      </table>
 
 
+<div class="row">
+  <% @listings.each do |listing|%>
+    <div class="col-md-3">
+      <%= image_tag listing.image.url, class:"img-thumbnail"%> 
+      <h3><%= listing.name.capitalize%>  </h3>
+      <p><%= number_to_currency(listing.price)%></p>
+      <%= link_to "Show" ,listing, class: "btn btn-link"%> 
+      <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%> 
+      <%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%>
     </div>
-  </div>
+  <%end%>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 <%= link_to "New listing", new_listing_path %>
