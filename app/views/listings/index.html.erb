@@ -1,18 +1,19 @@
 
 
 
-
-<div class="row">
-  <% @listings.each do |listing|%>
-    <div class="col-md-3">
-      <%= image_tag listing.image.url, class:"img-thumbnail"%> 
-      <h3><%= listing.name.capitalize%>  </h3>
-      <p><%= number_to_currency(listing.price)%></p>
-      <%= link_to "Show" ,listing, class: "btn btn-link"%> 
-      <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%> 
-      <%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%>
-    </div>
-  <%end%>
+<div class="center">
+  <div class="row">
+    <% @listings.each do |listing|%>
+      <div class="col-md-3">
+        <%= image_tag listing.image.url, class:"img-thumbnail"%> 
+        <h3><%= listing.name.capitalize%>  </h3>
+        <p><%= number_to_currency(listing.price)%></p>
+        <%= link_to "Show" ,listing, class: "btn btn-link"%> 
+        <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%> 
+        <%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%>
+      </div>
+    <%end%>
+  </div>
 </div>
 
 
