@@ -105,6 +105,7 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hirb (0.7.3)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -264,6 +265,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  hirb (~> 0.7.3)
   importmap-rails
   jbuilder
   kt-paperclip (~> 6.4, >= 6.4.1)

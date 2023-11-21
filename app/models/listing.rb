@@ -5,4 +5,6 @@ class Listing < ApplicationRecord
   validates :name, :description, :price,  presence: true
   validates :price, numericality: {greter_then: 0}
 
+  belongs_to :user
+
 end

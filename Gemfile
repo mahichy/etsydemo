@@ -22,6 +22,7 @@ gem "jbuilder"
 gem "bootstrap"
 gem "sassc-rails"
 gem "devise"
+gem 'hirb', '~> 0.7.3'
 
 # gem "paperclip", "~> 6.0.0"
 gem "kt-paperclip", "~> 6.4", ">= 6.4.1"
