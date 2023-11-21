@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /listings or /listings.json
   def index
@@ -67,5 +69,11 @@ class ListingsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def listing_params
       params.require(:listing).permit(:name, :description, :price, :image)
+    end
+
+    def check_user
+      if current_user != @listing.user
+         redirect_to root_url, alert: "Sorry, This listings belongs to someone else" 
+      end
     end
 end
