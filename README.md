@@ -170,3 +170,38 @@ Listing Index
 <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%>
 <%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%>
 <% end %>
+
+Seller before table
+
+<div class="center">
+  <div class="row">
+    <% @listings.each do |listing|%>
+      <div class="col-md-3">
+        <div class="thumbnail">
+        <%= image_tag listing.image.url, class:"img-thumbnail"%> 
+        <h3><%= listing.name.capitalize%>  </h3>
+        <p><%= number_to_currency(listing.price)%></p>
+        <h5><%= "Sold by #{listing.user.name.capitalize}"%>  </h5>
+        <%= link_to "Show" ,listing, class: "btn btn-link"%> 
+        <% if (user_signed_in?) && (current_user == listing.user)%>
+          <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%> 
+          <%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%>
+        <% end %>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+button
+
+ <td>
+        <div class="input-group mb-3 ">
+          <button class="btn btn-primary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">Action</button>
+          <ul class="dropdown-menu">
+            <li> <%= link_to "Show" ,listing, class: "btn btn-link"%> </li>
+            <li> <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%></li>
+            <li><%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%></li>
+          </ul>
+        </div>
+      </td>
