@@ -164,3 +164,9 @@ CARD INDEX
   </div>
   <%end%>
 </div>
+
+Listing Index
+<% if (user_signed_in?) && (current_user == listing.user)%>
+<%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link"%>
+<%= link_to "Delete", listing, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-link"%>
+<% end %>
